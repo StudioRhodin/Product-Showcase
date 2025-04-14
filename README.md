@@ -1,1 +1,1 @@
-# Digital Rhombus Studios Product-Exploration-Website
+# Studio Rhodin Product-Exploration-Website
