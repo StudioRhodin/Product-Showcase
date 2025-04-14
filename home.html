@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/home.css">
+  <script type="text/javascript" src="app.js" defer></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-light" style="background-color: #eccba4;">
+      <!-- Navbar content -->
+      <a class="navbar-brand" href="index.html">
+        <img src="img/back_arrow.svg" width="50" height="50" alt="">
+      </a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <!-- Interactive Web Title -->
+  <div class="web">
+    Interactive Web
+  </div>
+
+  <!-- Section with 3 Model-Viewer compartments -->
+  <section class="container">
+    <div class="model-compartment">
+      <model-viewer id="previewModel" src="assets/models/Air Compressor_v1.glb" alt="3D Model 2" auto-rotate disable-pan disable-zoom interaction-prompt="none" data-url="air.html"></model-viewer>
+    </div>
+    <div class="model-compartment">
+      <model-viewer id="previewModel" src="assets/models/jet_Engine_01.glb" alt="3D Model 2" auto-rotate disable-pan disable-zoom interaction-prompt="none" data-url="jet.html"></model-viewer>
+    </div>
+    <div class="model-compartment">
+      <model-viewer id="previewModel" src="assets/models/Motorcycle_Engine_v1.glb" alt="3D Model 2" auto-rotate disable-pan disable-zoom interaction-prompt="none" data-url="motor.html"></model-viewer>
+    </div>
+  </section>
+  </main>
+
+  <!-- Redirect to full control page -->
+  <script>    
+    document.addEventListener("DOMContentLoaded", function() {  
+      const models = document.querySelectorAll("#previewModel");
+      
+      console.log("Found models:", models.length); // Debugging log
+
+      models.forEach(model => {
+          model.addEventListener("click", function () {
+              const targetUrl = this.getAttribute("data-url");
+
+              console.log("Model clicked:", this.src); // Debugging log
+
+              if (targetUrl) {
+                  window.location.href = targetUrl;
+              } else {
+                  console.error("No data-url found for this model.");
+                  alert("No data-url found!");
+              }
+          });
+      });
+  });
+
+  </script>
+
+</body>
+</html>
