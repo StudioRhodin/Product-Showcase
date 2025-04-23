@@ -109,7 +109,7 @@ section {
   /* background: #222; */
 
   /* @supports (background-blend-mode: multiply) { */
-  background: url(../img/DRS_logo.png), radial-gradient(#444, #111);
+  background: url(../img/Rhodin_logo_05.png), radial-gradient(#444, #111);
   background-blend-mode: multiply;
   background-attachment: fixed;
   background-repeat: no-repeat;
